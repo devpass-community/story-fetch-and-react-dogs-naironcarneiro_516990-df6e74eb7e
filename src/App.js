@@ -20,7 +20,17 @@ function App() {
       });
   }, []);
   const searchByBreed = () => {
-    // TODO
+    const urlAPI = `https://dog.ceo/api/breed/${selectedBreed}/images`;
+    setIsLoading(true);
+    fetch(urlAPI)
+      .then((response) => response.json())
+      .then((data) => {
+        setDogImages(data.message);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
