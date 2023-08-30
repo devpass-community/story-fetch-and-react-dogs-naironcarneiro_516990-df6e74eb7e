@@ -20,9 +20,9 @@ function App() {
       });
   }, []);
   const searchByBreed = () => {
-    const urlAPI = `https://dog.ceo/api/breed/${selectedBreed}/images`;
+    const urlApi = `https://dog.ceo/api/breed/${selectedBreed}/images`;
     setIsLoading(true);
-    fetch(urlAPI)
+    fetch(urlApi)
       .then((response) => response.json())
       .then((dataImage) => {
         setDogImages(dataImage.message);
