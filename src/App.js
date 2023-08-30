@@ -24,8 +24,8 @@ function App() {
     setIsLoading(true);
     fetch(urlAPI)
       .then((response) => response.json())
-      .then((data) => {
-        setDogImages(data.message);
+      .then((dataImage) => {
+        setDogImages(dataImage.message);
         setIsLoading(false);
       })
       .catch((error) => {
